@@ -1,0 +1,14 @@
+.navbar{
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: azure;
+}
+
+.nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
