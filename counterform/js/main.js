@@ -90,6 +90,19 @@ function main() {
 
         typeWriterAnimation(0);
     });
+
+     if ('fonts' in document){
+        await document.fonts.ready;
+    }
+
+
+const placeholders = document.querySelectorAll('.skeleton-placeholder');
+placeholders.forEach(el => {
+    el.classList.remove('skeleton-placeholder');
+})
 }
+
+
+   
 
 main();
