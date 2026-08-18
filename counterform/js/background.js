@@ -7,6 +7,11 @@ const gl = canvas.getContext("webgl2", {
     powerPreference: "high-performance"
 });
 
+if (!gl)
+{
+    console.warn("WebGL2 is unavailable. The page will still render without the animated background.");
+}
+
 class RingBuffer
 {
     constructor(size)

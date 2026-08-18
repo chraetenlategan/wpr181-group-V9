@@ -1,3 +1,23 @@
+window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+});
+
+
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+
+        if (href && href.endsWith('.html')) {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 400);
+        }
+    });
+});
 class TypeWriter {
     constructor(element, lines, typingDelay, deletingDelay, variationDelay = 0, pauseAfterTypingDelay = 0, pauseAfterDeletingDelay = 0) {
         this.element = element;
@@ -90,19 +110,6 @@ function main() {
 
         typeWriterAnimation(0);
     });
-
-     if ('fonts' in document){
-        await document.fonts.ready;
-    }
-
-
-const placeholders = document.querySelectorAll('.skeleton-placeholder');
-placeholders.forEach(el => {
-    el.classList.remove('skeleton-placeholder');
-})
 }
-
-
-   
 
 main();
